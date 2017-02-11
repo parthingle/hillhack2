@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<span>Type in a keyword:</span>
+	<input type="text" name="keyword" class="form-control input-sm" placeholder="Lorem ipsum...">
+
+	<div class="context">
+	    <p>
+	      Lorem ipsum dolor sit āmet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, nò sea takimata
+	      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+	      rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+	      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie çonsequat, vel illum dolore
+	      eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit prāesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+	    </p>
+
+	    <p class="form-control input-sm">sdsgsfg</p>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.8.3/jquery.mark.min.js"></script>
+
+    <script type="text/javascript">
+    	$(document).ready(function () {
+	    	// Read the keyword
+		    $( ".input-sm" ).change(function() {
+		      var keyword = $("input[name='keyword']").val();
+		      console.log(keyword);
+
+		      	// Remove previous marked elements and mark
+		      	// the new keyword inside the context
+		      	$("body").unmark({
+		      	  done: function() {
+		      	    $("body").mark(keyword);
+		      	  }
+		      	});
+		    });
+    	});
+ 
+    </script>
+</body>
+</html>
