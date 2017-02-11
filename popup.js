@@ -325,16 +325,16 @@ var sbsasse=new senator("Ben Sasse","https://www.opensecrets.org/politicians/sum
 var sdheller=new senator("Dean Heller","https://www.opensecrets.org/politicians/summary.php?cid=N00027522&cycle=2016");
 var sccmasto=new senator("Catherine Cortez Masto","https://www.opensecrets.org/races/summary.php?cycle=2016&id=NVS2");
 var sjshaheen=new senator("Jeanne Shaheen","https://www.opensecrets.org/politicians/summary.php?cid=N00024790&cycle=2016");
-var smhassan=new senator("Maggie Hassan",);
-var sbmenendez=new senator("Bob Menendez", );
-var scbooker=new senator("Cory Booker" );
-var studall=new senator("Tom Udall",);
-var smheinrich=new senator("Martin Heinrich",);
-var scschumer=new senator("Chuck Schumer", );
-var skgillibrand=new senator("Kirsten Gillibrand",);
-var srburr=new senator("Richard Burr",);
-var sttillis=new senator("Thom Tillis", );
-var sjhoeven=new senator("John Hoeven", );
+var smhassan=new senator("Maggie Hassan","NA");
+var sbmenendez=new senator("Bob Menendez", "https://www.opensecrets.org/politicians/summary.php?cid=N00000699&cycle=2016");
+var scbooker=new senator("Cory Booker", "https://www.opensecrets.org/politicians/summary.php?cid=N00035267&cycle=2016" );
+var studall=new senator("Tom Udall","https://www.opensecrets.org/search/?q=tom+udall&cx=010677907462955562473%3Anlldkv0jvam&cof=FORID%3A11");
+var smheinrich=new senator("Martin Heinrich","https://www.opensecrets.org/politicians/summary.php?cid=N00029835&cycle=2016");
+var scschumer=new senator("Chuck Schumer", "https://www.opensecrets.org/politicians/summary.php?cid=N00001093&cycle=2016");
+var skgillibrand=new senator("Kirsten Gillibrand","https://www.opensecrets.org/politicians/summary.php?cid=N00027658&cycle=2016");
+var srburr=new senator("Richard Burr","https://www.opensecrets.org/politicians/summary.php?cid=N00002221&cycle=2016");
+var sttillis=new senator("Thom Tillis","https://www.opensecrets.org/politicians/summary.php?cid=N00035492&cycle=2016" );
+var sjhoeven=new senator("John Hoeven", "https://www.opensecrets.org/politicians/summary.php?cid=N00031688&cycle=2016");
 var shheitkamp=new senator("Heidi Heitkamp", );
 var ssbrown=new senator("Sherrod Brown", );
 var srportman=new senator("Rob Portman", );
@@ -343,7 +343,7 @@ var sjlankford=new senator("James Lankford", );
 var srwyden=new senator("Ron Wyden", );
 var sjmerkley=new senator("Jeff Merkley", );
 var sbcasey=new senator("Bob Casey Jr.", );
-var sptoomey=new senator("Pat Toomey", );
+var sptoomey=new senator("Pat Toomey", );\
 var sjreed=new senator("Jack Reed", );
 var swhitehouse=new senator("Sheldon Whitehouse", );
 var slgraham=new senator("Lindsey Graham", );
@@ -376,5 +376,20 @@ $('p,h1,h2,h3,h4,h5').each(function(){
   theText += $(this).text();
 });
 
+//span, a, li, td, tr,
 
 var search()
+
+// queue=tree root node
+// while (queue not empty)
+// {
+//   top=queue.top
+//   pop top
+
+//   for child in top
+//       add to queue
+//   replace body of top
+
+// }
+
+//.__proto__
