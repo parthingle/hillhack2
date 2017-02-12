@@ -4,7 +4,7 @@ class senator{
 	constructor(name, web)
 }
 
-class represenative{
+class representative{
 	constructor(name, web)
 }
 
