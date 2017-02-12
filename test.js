@@ -57,3 +57,37 @@ var saklobuchar=new senator("Amy Klobuchar", "https://www.opensecrets.org/politi
 var safranken=new senator("Al Franken", "https://www.opensecrets.org/politicians/summary.php?cid=N00029016&cycle=2016");
 var stcochran=new senator("Thad Chochran", "https://www.opensecrets.org/politicians/summary.php?cid=N00003328&cycle=2016");
 var srwicker=new senator("Roger Wicker", "https://www.opensecrets.org/politicians/summary.php?cid=N00003280&cycle=2016");
+
+// REPRESENTATIVES
+// Alabama
+var rbbyrne = new representative("Bradley Byrne", "https://www.opensecrets.org/politicians/summary.php?cid=N00035380");
+var rmroby = new representative("Martha Roby", "https://www.opensecrets.org/politicians/summary.php?cid=N00030768");
+var rmrogers = new representative("Mike Rogers", "https://www.opensecrets.org/politicians/summary.php?cid=N00024759");
+var rraderholt = new representative("Robert Aderholt", "https://www.opensecrets.org/politicians/summary.php?cid=N00003028");
+var rmbrooks = new representative("Mo Brooks", "https://www.opensecrets.org/politicians/summary.php?cid=N00030910");
+var rgpalmer = new representative("Gary Palmer", "https://www.opensecrets.org/politicians/summary.php?cid=N00035691");
+var rtsewell = new representative("Terri Sewell", "https://www.opensecrets.org/politicians/summary.php?cid=N00030622");
+
+// Alaska
+var rdyoung = new representative("Don Young", "https://www.opensecrets.org/politicians/summary.php?cid=N00007999");
+
+// Arizona
+var  rtohalleran = new representative("Tom O'Halleran", "NA");
+var  rmmcsally = new representative("Martha McSally", "https://www.opensecrets.org/politicians/summary.php?cid=N00033982");
+var  rrgrijalva = new representative("Raul Grijalva", "https://www.opensecrets.org/politicians/summary.php?cid=N00025284");
+var  rpgosar = new representative("Paul Gosar", "https://www.opensecrets.org/politicians/summary.php?cid=N00030771");
+var  rabiggs = new representative("Andy Biggs", "NA");
+var  rdschweikert = new representative("David Schweikert", "https://www.opensecrets.org/politicians/summary.php?cid=N00006460");
+var  rrgallego = new representative("Ruben Gallego", "https://www.opensecrets.org/politicians/summary.php?cid=N00036097");
+var rtfranks = new representative("Trent Franks", "https://www.opensecrets.org/politicians/summary.php?cid=N00006423");
+var rksinema = new representative("Krysten Sinema", "https://www.opensecrets.org/politicians/summary.php?cid=N00033983");
+
+var rrcrawford = new representative("Rick Crawford", "https://www.opensecrets.org/politicians/summary.php?cid=N00030770");
+var rfhill = new representative("French Hill", "https://www.opensecrets.org/politicians/summary.php?cid=N00035792");
+
+var  rswomack = new representative("", "");
+var  rbwesterman = new representative("", "");
+var  rdlamalfa = new representative("", "");
+var  rjhuffman = new representative("", "");
+var  rjgaramendi = new representative("", "");
+var  rtmcclintock = new representative("", "");
