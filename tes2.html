@@ -2,8 +2,37 @@
 <html>
 <head>
 	<title></title>
+
+	<!--<link rel="stylesheet" type="text/css" href="stylesheet.css" />-->
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+	#tooltip_content { 
+		display: none; 
+	}
+	
+</style>
+
+
+ 
+
 </head>
 <body>
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="minfo">Some text in the Modal..</p>
+
+
+
+  </div>
+
+</div>
 
 
 	<div class="context">
@@ -60,9 +89,21 @@ Franken's (apparently joking?) response:
 
 	    <p class="form-control input-sm">sdsgsfg</p>
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <div class="tooltip_templates">
+	    <span id="tooltip_content">
+	        testing
+	    </span>
+	</div>
+
+
+   
+   
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.8.3/jquery.mark.min.js"></script>
 
+ <script type="text/javascript" src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
     <script type="text/javascript">
 
 
@@ -72,39 +113,253 @@ Franken's (apparently joking?) response:
 
 $(document).ready(function () {
 
+
+jQuery.fn.exists = function(){return this.length>0;}
+
+class senator{
+ constructor(fullName, lastName, web, cID)
+  {
+    this.fullName=fullName;
+    this.lastName=lastName;
+    this.web=web;
+	this.cID=cID;
+  }
+}
+var srshelby=new senator("Richard Shelby", "Shelby", "https://www.opensecrets.org/politicians/summary.php?cid=N00009920&cycle=2016", "N00009920");
+var slstrange=new senator("Luther Strange", "Strange", "NA", "NA");
+var slmurkowski=new senator("Lisa Murkowski", "Murkowski", "https://www.opensecrets.org/politicians/summary.php?cid=N00026050&cycle=2016", "N00026050");
+var sdsullivan=new senator("Dan Sullivan", "Sullivan", "https://www.opensecrets.org/politicians/summary.php?cid=N00035774&cycle=2016", "N00035774");
+var sjmccain=new senator("John McCain", "McCain", "https://www.opensecrets.org/politicians/summary.php?cid=N00006424&cycle=2016", "N00006424");
+var sjflake=new senator("Jeff Flake", "Flake", "https://www.opensecrets.org/politicians/summary.php?cid=N00009573&cycle=2016", "N00009573");
+var sjboozman=new senator("John Boozman", "Boozman", "https://www.opensecrets.org/politicians/summary.php?cid=N00013873&cycle=2016", "N00013873");
+var stcotton=new senator("Tom Cotton", "Cotton", "https://www.opensecrets.org/politicians/summary.php?cid=N00033363&cycle=2016", "N00033363");
+var sdfeinstein=new senator("Dianne Feinstein", "Feinstein", "https://www.opensecrets.org/politicians/summary.php?cid=N00007364&cycle=2016", "N00007364");
+var skharris=new senator("Katherine Harris", "Harris", "https://www.opensecrets.org/politicians/summary.php?cid=N00024882&cycle=2006", "N00024882");
+var smbennet=new senator("Michael Bennet", "Bennet", "https://www.opensecrets.org/politicians/summary.php?cid=N00030608&cycle=2016", "N00030608");
+var scgardner=new senator("Cory Gardnet", "Gardnet", "https://www.opensecrets.org/politicians/summary.php?cid=N00030780&cycle=2016", "N00030780");
+var srblumenthal=new senator("Richard Blumenthal", "Blumenthal", "https://www.opensecrets.org/politicians/summary.php?cid=N00031685&cycle=2016", "N00031685");
+var scmurphy=new senator("Christopher Murphy", "Murphy", "https://www.opensecrets.org/politicians/summary.php?cid=N00027566&cycle=2016", "N00027566");
+var stcarper=new senator("Tom Carper", "Carper", "https://www.opensecrets.org/politicians/summary.php?cid=N00012508&cycle=2016", "N00012508");
+var sccoons=new senator("Chris Coons", "Coons", "https://www.opensecrets.org/politicians/summary.php?cid=N00031820&cycle=2016", "N00031820");
+var sbnelson=new senator("Bill Nelson", "Nelson", "https://www.opensecrets.org/politicians/summary.php?cid=N00009926&cycle=2016", "N00009926");
+var smrubio=new senator("Marco Rubio", "Rubio", "https://www.opensecrets.org/politicians/summary.php?cid=N00030612&cycle=2016", "N00030612");
+var sjisakson=new senator("Johnny Isakson", "Isakson", "https://www.opensecrets.org/politicians/summary.php?cid=N00002593&cycle=2016", "N00002593");
+var sdperdue=new senator("David Perdue", "Perdue", "https://www.opensecrets.org/politicians/summary.php?cid=N00035516&cycle=2016", "N00035516");
+var sbschatz=new senator("Brian Schatz", "Schatz", "https://www.opensecrets.org/politicians/summary.php?cid=N00028138&cycle=2016", "N00028138");
+var smhirono=new senator("Mazie Hirono", "Hirono", "https://www.opensecrets.org/politicians/summary.php?cid=N00028139&cycle=2016", "N00028139");
+var smcrapo=new senator("Mike Crapo", "Crapo", "https://www.opensecrets.org/politicians/summary.php?cid=N00006267&cycle=2016", "N00006267");
+var sjrisch=new senator("James Risch", "Risch", "https://www.opensecrets.org/politicians/summary.php?cid=N00029441&cycle=2016", "N00029441");
+var sddurbin=new senator("Dick Durbin", "Durbin", "https://www.opensecrets.org/politicians/summary.php?cid=N00004981&cycle=2016", "N00004981");
+var stduckworth=new senator("Tammy Duckworth", "Duckworth", "https://www.opensecrets.org/politicians/summary.php?cid=N00027860&cycle=2016", "N00027860");
+var sjdonnelly=new senator("Joe Donnelly", "Donnelly", "https://www.opensecrets.org/politicians/summary.php?cid=N00026586&cycle=2016", "N00026586");
+var styoung=new senator("Todd Young", "Young", "https://www.opensecrets.org/politicians/summary.php?cid=N00030670&cycle=2016", "N00030670");
+var scgrassley=new senator("Chuck Grassley", "Grassley", "https://www.opensecrets.org/politicians/summary.php?cid=N00001758&cycle=2016", "N00001758");
+var sjernst=new senator("Joni Ernst", "Ernst", "https://www.opensecrets.org/politicians/summary.php?cid=N00035483&cycle=2016", "N00035483");
+var sproberts=new senator("Pat Roberts", "Roberts", "https://www.opensecrets.org/politicians/summary.php?cid=N00005285&cycle=2016", "N00005285");
+var sjmoran=new senator("Jerry Moran", "Moran", "https://www.opensecrets.org/politicians/summary.php?cid=N00005282&cycle=2016", "N00005282");
+var smmcconnell=new senator("Mitch McConnell", "McConnell", "https://www.opensecrets.org/politicians/summary.php?cid=N00003389&cycle=2016", "N00003389");
+var srpaul=new senator("Rand Paul", "Paul", "https://www.opensecrets.org/politicians/summary.php?cid=N00030836&cycle=2016", "N00030836");
+var sbcassidy=new senator("Bill Cassidy", "Cassidy", "https://www.opensecrets.org/politicians/summary.php?cid=N00030245&cycle=2016", "N00030245");
+var sjkennedy=new senator("John Kennedy", "Kennedy", "NA", "NA");
+var sscollins=new senator("Susan Collins", "Collins", "https://www.opensecrets.org/politicians/summary.php?cid=N00000491&cycle=2016", "N00000491");
+var saking=new senator("Angus King", "King", "https://www.opensecrets.org/politicians/summary.php?cid=N00034580&cycle=2016", "N00034580");
+var sbcardin=new senator("Ben Cardin", "Cardin", "https://www.opensecrets.org/politicians/summary.php?cid=N00001955&cycle=2016", "N00001955");
+var scvhollen=new senator("Chris Van Hollen", "Hollen", "https://www.opensecrets.org/politicians/summary.php?cid=N00013820&cycle=2016", "N00013820");
+var sewarren=new senator("Elizabeth Warren", "Warren", "https://www.opensecrets.org/politicians/summary.php?cid=N00033492&cycle=2016", "N00033492");
+var semarkey=new senator("Ed Markey", "Markey", "https://www.opensecrets.org/politicians/summary.php?cid=N00000270&cycle=2016", "N00000270");
+var sdstabenow=new senator("Debbie Stabenow", "Stabenow", "https://www.opensecrets.org/politicians/summary.php?cid=N00004118&cycle=2016", "N00004118");
+var sgpeters=new senator("Gary Peters", "Peters", "https://www.opensecrets.org/politicians/summary.php?cid=N00029277&cycle=2016", "N00029277");
+var saklobuchar=new senator("Amy Klobuchar", "Klobuchar", "https://www.opensecrets.org/politicians/summary.php?cid=N00027500&cycle=2016", "N00027500");
+var safranken=new senator("Al Franken", "Franken", "https://www.opensecrets.org/politicians/summary.php?cid=N00029016&cycle=2016", "N00029016");
+var stcochran=new senator("Thad Chochran", "Chochran", "https://www.opensecrets.org/politicians/summary.php?cid=N00003328&cycle=2016", "N00003328");
+var srwicker=new senator("Roger Wicker", "Wicker", "https://www.opensecrets.org/politicians/summary.php?cid=N00003280&cycle=2016", "N00003280");
+var scmccaskill=new senator("Claire McCaskill", "McCaskill", "https://www.opensecrets.org/politicians/summary.php?cid=N00027694&cycle=2016", "N00027694");
+var srblunt=new senator("Roy Blunt", "Blunt", "https://www.opensecrets.org/politicians/summary.php?cid=N00005195&cycle=2016", "N00005195");
+var sjtester=new senator("Jon Tester", "Tester", "https://www.opensecrets.org/politicians/summary.php?cid=N00027605&cycle=2016", "N00027605");
+var ssdaines=new senator("Steve Daines", "Daines", "https://www.opensecrets.org/politicians/summary.php?cid=N00033054&cycle=2016", "N00033054");
+var sdfischer=new senator("Deb Fischer", "Fischer" ,"https://www.opensecrets.org/politicians/summary.php?cid=N00033443&cycle=2016", "N00033443");
+var sbsasse=new senator("Ben Sasse", "Sasse", "https://www.opensecrets.org/politicians/summary.php?cid=N00035544&cycle=2016", "N00035544");
+var sdheller=new senator("Dean Heller", "Heller", "https://www.opensecrets.org/politicians/summary.php?cid=N00027522&cycle=2016", "N00027522");
+var sccmasto=new senator("Catherine Cortez Masto", "Masto", "NA", "NA");
+var sjshaheen=new senator("Jeanne Shaheen", "Shaheen", "https://www.opensecrets.org/politicians/summary.php?cid=N00024790&cycle=2016", "N00024790");
+var smhassan=new senator("Maggie Hassan", "Hassan", "NA", "NA");
+var sbmenendez=new senator("Bob Menendez", "Menendez", "https://www.opensecrets.org/politicians/summary.php?cid=N00000699&cycle=2016", "N00000699");
+var scbooker=new senator("Cory Booker", "Booker", "https://www.opensecrets.org/politicians/summary.php?cid=N00035267&cycle=2016", "N00035267");
+var studall=new senator("Tom Udall", "Udall", "https://www.opensecrets.org/politicians/summary.php?cid=N00006561&cycle=2016", "N00006561");
+var smheinrich=new senator("Martin Heinrich", "Heinrich", "https://www.opensecrets.org/politicians/summary.php?cid=N00029835&cycle=2016", "N00029835");
+var scschumer=new senator("Chuck Schumer", "Schumer", "https://www.opensecrets.org/politicians/summary.php?cid=N00001093&cycle=2016", "N00001093");
+var skgillibrand=new senator("Kirsten Gillibrand", "Gillibrand", "https://www.opensecrets.org/politicians/summary.php?cid=N00027658&cycle=2016", "N00027658");
+var srburr=new senator("Richard Burr", "Burr", "https://www.opensecrets.org/politicians/summary.php?cid=N00002221&cycle=2016", "N00002221");
+var sttillis=new senator("Thom Tillis", "Tillis", "https://www.opensecrets.org/politicians/summary.php?cid=N00035492&cycle=2016", "N00035492");
+var sjhoeven=new senator("John Hoeven", "Hoeven", "https://www.opensecrets.org/politicians/summary.php?cid=N00031688&cycle=2016", "N00031688");
+var shheitkamp=new senator("Heidi Heitkamp", "Heitkamp", "https://www.opensecrets.org/politicians/summary.php?cid=N00033782&cycle=2016", "N00033782");
+var ssbrown=new senator("Sherrod Brown", "Brown", "https://www.opensecrets.org/politicians/summary.php?cid=N00003535&cycle=2016", "N00003535");
+var srportman=new senator("Rob Portman", "Portman", "https://www.opensecrets.org/politicians/summary.php?cid=N00003682&cycle=2016", "N00003682");
+var sjinhofe=new senator("Jim Inhofe", "Inhofe", "https://www.opensecrets.org/politicians/summary.php?cid=N00005582&cycle=2016", "N00005582");
+var sjlankford=new senator("James Lankford", "Lankford", "https://www.opensecrets.org/politicians/summary.php?cid=N00031129&cycle=2016", "N00031129");
+var srwyden=new senator("Ron Wyden", "Wyden", "https://www.opensecrets.org/politicians/summary.php?cid=N00007724&cycle=2016", "N00007724");
+var sjmerkley=new senator("Jeff Merkley", "Merkley", "https://www.opensecrets.org/politicians/summary.php?cid=N00029303&cycle=2016", "N00029303");
+var sbcasey=new senator("Bob Casey Jr.", "Casey", "https://www.opensecrets.org/politicians/summary.php?cid=N00027503&cycle=2016", "N00027503");
+var sptoomey=new senator("Pat Toomey", "Toomey", "https://www.opensecrets.org/politicians/summary.php?cid=N00001489&cycle=2016", "N00001489");
+var sjreed=new senator("Jack Reed", "Reed", "https://www.opensecrets.org/politicians/summary.php?cid=N00000362&cycle=2016", "N00000362");
+var sswhitehouse=new senator("Sheldon Whitehouse", "Whitehouse", "https://www.opensecrets.org/politicians/summary.php?cid=N00027533&cycle=2016", "N00027533");
+var slgraham=new senator("Lindsey Graham", "Graham", "https://www.opensecrets.org/politicians/summary.php?cid=N00009975&cycle=2016", "N00009975");
+var stscott=new senator("Tim Scott", "Scott", "https://www.opensecrets.org/politicians/summary.php?cid=N00031782&cycle=2016", "N00031782");
+var sjthune=new senator("John Thune", "Thune", "https://www.opensecrets.org/politicians/summary.php?cid=N00004572&cycle=2016", "N00004572");
+var smrounds=new senator("Mike Rounds", "Rounds", "https://www.opensecrets.org/politicians/summary.php?cid=N00035187&cycle=2016", "N00035187");
+var slalexander=new senator("Lamar Alexander", "Alexander", "https://www.opensecrets.org/politicians/summary.php?cid=N00009888&cycle=2016", "N00009888");
+var sbcorker=new senator("Bob Corker", "Corker", "https://www.opensecrets.org/politicians/summary.php?cid=N00027441&cycle=2016", "N00027441");
+var sjcornyn=new senator("John Cornyn", "Cornyn", "https://www.opensecrets.org/politicians/summary.php?cid=N00024852&cycle=2016", "N00024852");
+var stcruz=new senator("Ted Cruz", "Cruz", "https://www.opensecrets.org/politicians/summary.php?cid=N00033085&cycle=2016", "N00033085");
+var sohatch=new senator("Orrin Hatch", "Hatch", "https://www.opensecrets.org/politicians/summary.php?cid=N00009869&cycle=2016", "N00009869");
+var smlee=new senator("Mike Lee", "Lee", "https://www.opensecrets.org/politicians/summary.php?cid=N00031696&cycle=2016", "N00031696");
+var spleahy=new senator("Patrick Leahy", "Leahy", "https://www.opensecrets.org/politicians/summary.php?cid=N00009918&cycle=2016", "N00009918");
+var sbsanders=new senator("Bernie Sanders", "Sanders", "https://www.opensecrets.org/politicians/summary.php?cid=N00000528&cycle=2016", "N00000528");
+var smwarner=new senator("Mark Warner", "Warner", "https://www.opensecrets.org/politicians/summary.php?cid=N00002097&cycle=2016", "N00002097");
+var stkaine=new senator("Tim Kaine", "Kaine", "https://www.opensecrets.org/politicians/summary.php?cid=N00033177&cycle=2016", "N00033177");
+var spmurray=new senator("Patty Murray", "Murray", "https://www.opensecrets.org/politicians/summary.php?cid=N00007876&cycle=2016", "N00007876");
+var smcantwell=new senator("Maria Cantwell", "Cantwell", "https://www.opensecrets.org/politicians/summary.php?cid=N00007836&cycle=2016", "N00007836");
+var sjmanchin=new senator("Joe Manchin", "Manchin", "https://www.opensecrets.org/politicians/summary.php?cid=N00032838&cycle=2016", "N00032838");
+var ssmcapito=new senator("Shelley Moore Capito", "Capito", "https://www.opensecrets.org/politicians/summary.php?cid=N00009771&cycle=2016", "N00009771");
+var srjohnson=new senator("Ron Johnson", "Johnson", "https://www.opensecrets.org/politicians/summary.php?cid=N00032546&cycle=2016", "N00032546");
+var stbaldwin=new senator("Tammy Baldwin", "Baldwin", "https://www.opensecrets.org/politicians/summary.php?cid=N00004367&cycle=2016", "N00004367");
+var smenzi=new senator("Mike Enzi", "Enzi", "https://www.opensecrets.org/politicians/summary.php?cid=N00006249&cycle=2016", "N00006249");
+var sjbarrasso=new senator("John Barrasso", "Barrasso", "https://www.opensecrets.org/politicians/summary.php?cid=N00006236&cycle=2016", "N00006236");
+
+
+
+var senators=[srshelby, slstrange, slmurkowski, sdsullivan, sjmccain, sjflake, sjboozman, stcotton, sdfeinstein, skharris, smbennet, scgardner, srblumenthal, scmurphy, stcarper, sccoons, sbnelson, smrubio, sjisakson, sdperdue, sbschatz, smhirono, smcrapo, sjrisch, sddurbin, stduckworth, sjdonnelly, styoung, scgrassley, sjernst, sproberts, sjmoran, smmcconnell, srpaul, sbcassidy, sjkennedy, sscollins, saking, sbcardin, scvhollen, sewarren, semarkey, sdstabenow, sgpeters, saklobuchar, safranken, stcochran, srwicker, scmccaskill, srblunt, sjtester, ssdaines, sdfischer, sbsasse, sdheller, sccmasto, sjshaheen, smhassan, sbmenendez, scbooker, studall, smheinrich, scschumer, skgillibrand, srburr, sttillis, shheitkamp, ssbrown, srportman, sjinhofe, sjlankford, srwyden, sjmerkley, sbcasey, sptoomey, sjreed, sswhitehouse, slgraham, stscott, sjthune, smrounds, slalexander, sbcorker, sjcornyn, stcruz, sohatch, smlee, spleahy, sbsanders, smwarner, stkaine, spmurray, smcantwell, sjmanchin, ssmcapito, srjohnson, stbaldwin, smenzi, sjbarrasso];
+
+
 	
-var Sens =new Array(100);
-Sens=["Patrick Leahy", "Orrin Hatch", "Thad Cochran", "Chuck Grassley","Mitch McConnell", "Richard Shelby", "John McCain", "Dianne Feinstein", "Patty Murray", "Jim Inhofe", "Ron Wyden", "Pat Roberts", "Dick Durbin", "Jack Reed", "Jeff Sessions", "Susan Collins", "Mike Enzi", "Chuck Schumer", "Mike Crapo", "Bill Nelson", "Tom Carper", "Debbi Stabenow", "Maria Cantwell", "John Cornyn", "Lisa Murkowski", "Lindsey Graham", "Lamar Alexander", "Richard Burr", "John Thune", "ohnny Isakson", "Bob Menendez", "Ben Cardin", "Bernie Snaders", "Sherrod Brown", "Bob Casey, Jr.", "Bob Corker", "Claire McCaskill", "Amy Klobuchar", "Sheldon Whitehouse", "John Tester", "John Barrasso", "Roger Wicker", "Tom Udall", "Jeanne Shaheen", "Mark Warner", "Jim Risch", "Jeff Merkley", "Michael Bennet", "Kirsten Gillibrand", "Al Franken", "Joe Manchin", "Chris Coons", "Roy Blunt", "Jerry Moran", "Rob Portman", "John Boozeman", "Pat Toomey", "John Hoeven", "Marco Rubio", "Ron Johnson", "Rand Paul", "Richard Blumenthal" , "Mike Lee", "Dean Heller", "Brian Schatz", "Tim Scott", "Jeff Flake", "Joe Donnelly", "Chris Murphy", "Mazie Hirono", "Martin Heinrich", "Angus King", "Tim Kaine", "Ted Cruz", "Elizabeth Warren", "Deb Fischer", "Heidi Heitkamp", "Ed Markey", "Cory Booker", "Shelley Moore Capito", "Gary Peters","Bill Cassidy", "Cory Gardener", "James Lankford", "Tom Cotton", "Steve Daines","Mike Rounds", "David Perdue", "Tom Tillis", "Joni Ernst", "Ben Sasse", "Dan Sullivan", "Chris Van Hollen", "Todd Young", "Tammy Duckworth", "Maggie Hassan", "Kamala Harris", "John Neely Kennedy", "Catherine Cortez Masto" ];
+// var Sens =new Array(100);
+// Sens=["Patrick Leahy", "Orrin Hatch", "Thad Cochran", "Chuck Grassley","Mitch McConnell", "Richard Shelby", "John McCain", "Dianne Feinstein", "Patty Murray", "Jim Inhofe", "Ron Wyden", "Pat Roberts", "Dick Durbin", "Jack Reed", "Jeff Sessions", "Susan Collins", "Mike Enzi", "Chuck Schumer", "Mike Crapo", "Bill Nelson", "Tom Carper", "Debbi Stabenow", "Maria Cantwell", "John Cornyn", "Lisa Murkowski", "Lindsey Graham", "Lamar Alexander", "Richard Burr", "John Thune", "ohnny Isakson", "Bob Menendez", "Ben Cardin", "Bernie Snaders", "Sherrod Brown", "Bob Casey, Jr.", "Bob Corker", "Claire McCaskill", "Amy Klobuchar", "Sheldon Whitehouse", "John Tester", "John Barrasso", "Roger Wicker", "Tom Udall", "Jeanne Shaheen", "Mark Warner", "Jim Risch", "Jeff Merkley", "Michael Bennet", "Kirsten Gillibrand", "Al Franken", "Joe Manchin", "Chris Coons", "Roy Blunt", "Jerry Moran", "Rob Portman", "John Boozeman", "Pat Toomey", "John Hoeven", "Marco Rubio", "Ron Johnson", "Rand Paul", "Richard Blumenthal" , "Mike Lee", "Dean Heller", "Brian Schatz", "Tim Scott", "Jeff Flake", "Joe Donnelly", "Chris Murphy", "Mazie Hirono", "Martin Heinrich", "Angus King", "Tim Kaine", "Ted Cruz", "Elizabeth Warren", "Deb Fischer", "Heidi Heitkamp", "Ed Markey", "Cory Booker", "Shelley Moore Capito", "Gary Peters","Bill Cassidy", "Cory Gardener", "James Lankford", "Tom Cotton", "Steve Daines","Mike Rounds", "David Perdue", "Tom Tillis", "Joni Ernst", "Ben Sasse", "Dan Sullivan", "Chris Van Hollen", "Todd Young", "Tammy Duckworth", "Maggie Hassan", "Kamala Harris", "John Neely Kennedy", "Catherine Cortez Masto" ];
+
+
 
 
 
 	//arr[100];
-	for(var i=0;i<100;i++)
+	var lgth=senators.length;
+	var count=0;
+	for(var i=0;i<lgth;i++)
 	{
-		var keyword=Sens[i];
+		//var keyword=Sens[i];
+		var keyword=senators[i].lastName;
+
 
 
 		
 		// Read the keyword
-	      console.log(keyword);
+	      // console.log(keyword);
+	      // console.log(senators[i]);
 
 	      	// Remove previous marked elements and mark
 	      	// the new keyword inside the context
 	      	
-	      	$("body").mark(keyword);
+	      	var marks = $("body").mark(keyword, { "className" : keyword });
+	      //	$("body").
 	      	 // $("body").unmark({
 	      	 //  done: function() {
 	      	 //     $("body").mark(keyword);
 	      	 //   }
 	      	 // });
+
+	      	 // marks.wrap('<strong class="tooltip"></strong>')
+
+	      	 $("." + keyword).attr("data-tooltip-content", "#tooltip_content")
+
+	      	 $("." + keyword).wrap('<strong class="tooltip data-' + keyword + '"></strong>');
+	      	 $("." + keyword).wrap('<a href="#"></a>');
+	      	 $("." + keyword).click(function(e) {
+	      	 	var lname = (e.currentTarget.className);
+	      	 	for(var i=0;i<99;i++)
+				{
+					console.log(senators[i]);
+					if(lname==senators[i].lastName)
+					{
+						document.getElementById("minfo").innerHTML="<a target='_blank' href='" + senators[i].web + "'>Open Secrets Page</a>"
+					}
+				}
+				modal.style.display = "block";
+	      	 	// console.log(keyword);
+	      	 });
+
+
 	    	
+	    	
+	      	 // if (!($('.tooltip')))
+	      	 // {
+	      	 // 	$("mark").wrap('<strong class="tooltip"></strong>');
+	      	 // }
+
+
+
+
 
 	}
+
+
+var modal = document.getElementById('myModal');
+var btn = document.getElementsByClassName("tooltip");
+var btnlength=btn.length;
+console.log(btnlength);
+var span = document.getElementsByClassName("close")[0];
+// for(var i=0;i<btnlength;i++)
+// {	
+// 	var bt = btn[i];
+// 	var sen = senators;
+// 	bt.onclick = function() {
+// 	console.log(bt);
+// 	var lname=(bt.className.split(" ")[1].split("-")[1]);
+// 	for(var i=0;i<99;i++)
+// 	{
+// 		console.log(sen[i]);
+// 		if(lname==sen[i].lastName)
+// 		{
+// 			document.getElementById("minfo").innerHTML="<a target='_blank' href='" + sen[i].web + "'>Open Secrets Page</a>"
+// 		}
+// 	}
+//     modal.style.display = "block";
+// }
+// }
+span.onclick = function() {
+    modal.style.display = "none";
+}	
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+	// $('.tooltip').hover(function(e) {
+	// 	var name = $(this)[0].childNodes[0].innerHTML;
+
+	// 	// create one single div with id for tooltip
+	// 	// on hover, change the innerHTML of the div based on the last name
+	// 	// in css, div position: absolute, width: 200px, height: 200px, background: white
+	// 	// with jquery, change div.top, div.left -> e.x and e.y
+	// 	$('.tooltip').append("<div>Test</div>");
+
+	// 	console.log($(this)[0].childNodes[0].innerHTML)
+	// });
+
+		
+
+			
+
+
+		      	//$("mark").wrap('<span class="tooltip" data-tooltip-content="#tooltip_content">This span has a tooltip with HTML when you hover over it!</span><div class="tooltip_templates"><span id="tooltip_content">     		The Table comes here</span></div>');
+
 
 });
 
 
+
+
+
     </script>
+
 
 
 
