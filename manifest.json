@@ -1,0 +1,21 @@
+{
+  "name": "Muckraker",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Gives contributions of US Senators",
+  "homepage_url": "http://google.com",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Get the truth"
+  },
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "tabs"
+  ]
+}
